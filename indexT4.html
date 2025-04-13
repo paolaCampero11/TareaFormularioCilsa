@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Datos Personales</title>
+    <link rel="stylesheet" href="estilosT4.css">
+    
+</head>
+    
+<body>
+    <div class="container style-uno">
+        <h1 class="title">
+            Formulario de Datos Personales
+        </h1>
+        <form class="formulario">
+            <div class="campoForm">
+                <label>Nombre:</label>
+                <input type="text" name="nombre" required minlength="2" maxlength="50" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Solo letras y espacios permitidos">
+            </div>
+            <div class="campoForm">
+                <label>Apellido:</label>
+                <input type="text" name="apellido" required minlength="2" maxlength="50" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Solo letras y espacios permitidos">
+            </div>
+            <div class="campoForm">
+                <label>Email:</label>
+                <input type="email" name="email" required>
+            </div>
+            <div class="campoForm">
+                <label>Fecha de Nacimiento:</label>
+                <input type="date" name="fecha" required min="1960-01-01" max="2007-01-01">
+            </div>
+            <div class="campoForm">
+                <label>Pais de Residencia:</label>
+                <select name="pais" required>
+                    <option value="argentina">Argentina</option>
+                    <option value="bolivia">Bolivia</option>
+                    <option value="colombia">Colombia</option>
+                    <option value="ecuador">Ecuador</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <div class="section-submit">
+                <button type="submit">Enviar</button>
+                
+            </div>
+        </form>
+        <div class="section-styles">
+            <button id="estilo-uno"  type="button">Estilo1</button>
+            <button id="estilo-alto-contraste" type="button">Estilo de Alto Contraste</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const botonEstiloUno = document.getElementById("estilo-uno");
+            const botonAltoContraste = document.getElementById("estilo-alto-contraste");
+            const container = document.querySelector(".container");
+            
+            botonEstiloUno.addEventListener("click", () => {
+                container.classList.replace("style-alto-contraste", "style-uno");
+            });
+    
+            botonAltoContraste.addEventListener("click", () => {
+                container.classList.replace("style-uno", "style-alto-contraste");
+            });
+        });
+    </script>
+</body>
+</html>
